@@ -33,7 +33,7 @@ jobs:
           cat deploy/game.zip.b64.part-* > game.zip.b64
           base64 --decode game.zip.b64 > game.zip
           mkdir package
-          unzip -q game.zip -d package
+          unzip -q game.zip -d package || true
           test -f package/dist/index.html
 
       - name: Configure Pages
